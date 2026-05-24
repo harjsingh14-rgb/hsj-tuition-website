@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HSJ Tuition – Expert A-Level Chemistry tutoring for AQA & OCR A. Guaranteed A or A* from a B/C, or a two-grade jump from below. Book your free discovery call." />
+  <title>HSJ Tuition | A-Level Chemistry | Guaranteed Results</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: #1a202c; background: #fff; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+    /* ── Tokens ──────────────────────────────────────────── */
+    :root {
+      --navy:      #0d1b2a;
+      --navy-mid:  #1e3a5f;
+      --gold:      #f5a623;
+      --gold-dk:   #d4891a;
+      --blue:      #44a6d9;
+      --light:     #f7f8fa;
+      --border:    #e2e8f0;
+      --muted:     #718096;
+      --radius:    12px;
+      --shadow:    0 4px 24px rgba(0,0,0,.07);
+      --shadow-lg: 0 10px 48px rgba(0,0,0,.12);
+    }
+
+    /* ── Nav ─────────────────────────────────────────────── */
+    nav {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(13,27,42,.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      height: 68px;
+      padding: 0 6%;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-size: 1.35rem; font-weight: 900; color: #fff; text-decoration: none; letter-spacing: -.5px; }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a { color: rgba(255,255,255,.7); text-decoration: none; font-size: .88rem; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta {
+      background: var(--gold) !important; color: var(--navy) !important;
+      padding: .5rem 1.2rem; border-radius: 8px; font-weight: 800 !important; font-size: .84rem !important;
+      transition: background .2s !important;
+    }
+    .nav-cta:hover { background: var(--gold-dk) !important; }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-toggle span { display: block; width: 22px; height: 2px; background: #fff; margin: 5px 0; border-radius: 2px; transition: .3s; }
+
+    /* ── Hero ────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(140deg, #070f1a 0%, var(--navy-mid) 55%, #0a1628 100%);
+      min-height: 90vh;
+      display: flex; align-items: center;
+      padding: 6rem 6% 5rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -120px; right: -80px;
+      width: 560px; height: 560px;
+      background: radial-gradient(circle, rgba(245,166,35,.13) 0%, transparent 68%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; bottom: -100px; left: -60px;
+      width: 420px; height: 420px;
+      background: radial-gradient(circle, rgba(68,166,217,.09) 0%, transparent 68%);
+      pointer-events: none;
+    }
+    .hero-content { max-width: 740px; position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(245,166,35,.13); border: 1px solid rgba(245,166,35,.32);
+      color: var(--gold); padding: .38rem 1rem; border-radius: 50px;
+      font-size: .78rem; font-weight: 700; letter-spacing: .4px; margin-bottom: 1.6rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+      font-weight: 900; color: #fff; line-height: 1.12;
+      letter-spacing: -2px; margin-bottom: 1.4rem;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero p {
+      font-size: 1.1rem; color: rgba(255,255,255,.68);
+      max-width: 580px; line-height: 1.75; margin-bottom: 2.4rem;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--gold); color: var(--navy);
+      padding: .9rem 2rem; border-radius: 10px;
+      font-weight: 800; font-size: .98rem; text-decoration: none;
+      box-shadow: 0 4px 22px rgba(245,166,35,.35);
+      transition: all .2s;
+    }
+    .btn-primary:hover { background: var(--gold-dk); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(245,166,35,.4); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(255,255,255,.07); color: #fff;
+      border: 1px solid rgba(255,255,255,.18);
+      padding: .9rem 2rem; border-radius: 10px;
+      font-weight: 600; font-size: .98rem; text-decoration: none;
+      transition: all .2s;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,.13); border-color: rgba(255,255,255,.35); }
+
+    /* ── Stats strip ─────────────────────────────────────── */
+    .stats-bar {
+      background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding: 1.8rem 6%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1.5rem; text-align: center;
+    }
+    .stat-val { display: block; font-size: 1.85rem; font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: .25rem; }
+    .stat-lbl { font-size: .75rem; color: rgba(255,255,255,.45); font-weight: 600; text-transform: uppercase; letter-spacing: .6px; }
+
+    /* ── Section base ────────────────────────────────────── */
+    section { padding: 5.5rem 6%; }
+    .s-label { font-size: .73rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.8px; color: var(--gold); margin-bottom: .5rem; }
+    .s-title { font-size: clamp(1.9rem, 3.5vw, 2.7rem); font-weight: 900; color: var(--navy); letter-spacing: -1px; line-height: 1.18; margin-bottom: .9rem; }
+    .s-sub { font-size: 1.03rem; color: var(--muted); max-width: 600px; line-height: 1.72; margin-bottom: 3rem; }
+
+    /* ── Framework / Pillars ─────────────────────────────── */
+    #framework { background: var(--light); }
+    .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.4rem; }
+    .pillar {
+      background: #fff; border-radius: var(--radius);
+      padding: 2rem 1.8rem; box-shadow: var(--shadow);
+      border-top: 4px solid var(--gold);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .pillar:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .p-num {
+      width: 38px; height: 38px; background: var(--gold); color: var(--navy);
+      border-radius: 9px; font-size: 1rem; font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .pillar h3 { font-size: 1rem; font-weight: 800; color: var(--navy); margin-bottom: .55rem; }
+    .pillar p { font-size: .875rem; color: var(--muted); line-height: 1.67; }
+    .p-quote {
+      margin-top: 1rem; padding: .65rem .95rem;
+      background: rgba(245,166,35,.08); border-left: 3px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      font-size: .8rem; color: var(--navy); font-style: italic;
+    }
+
+    /* ── Delivery ────────────────────────────────────────── */
+    #delivery { background: #fff; }
+    .delivery { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; }
+    .d-item {
+      display: flex; gap: 1rem;
+      padding: 1.5rem; border-radius: var(--radius);
+      border: 1px solid var(--border); background: #fff;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .d-item:hover { border-color: var(--gold); box-shadow: 0 2px 18px rgba(245,166,35,.1); }
+    .d-icon {
+      flex-shrink: 0; width: 44px; height: 44px;
+      background: var(--navy); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+    }
+    .d-item h4 { font-size: .93rem; font-weight: 700; color: var(--navy); margin-bottom: .3rem; }
+    .d-item p { font-size: .84rem; color: var(--muted); line-height: 1.58; }
+
+    /* ── Guarantee ───────────────────────────────────────── */
+    #guarantee {
+      background: linear-gradient(140deg, var(--navy) 0%, var(--navy-mid) 100%);
+      text-align: center; padding: 5.5rem 6%;
+    }
+    .g-inner { max-width: 680px; margin: 0 auto; }
+    .g-inner .s-title { color: #fff; }
+    .g-inner .s-title span { color: var(--gold); }
+    .g-inner p { color: rgba(255,255,255,.68); font-size: 1.05rem; line-height: 1.75; margin-bottom: 2.2rem; max-width: 100%; }
+
+    /* ── App ─────────────────────────────────────────────── */
+    #app { background: var(--light); }
+    .app-inner { display: grid; grid-template-columns: 1.1fr .9fr; gap: 4rem; align-items: center; }
+    .app-badge {
+      display: inline-flex; align-items: center; gap: .4rem;
+      background: rgba(68,166,217,.1); border: 1px solid rgba(68,166,217,.28);
+      color: var(--blue); padding: .32rem .85rem; border-radius: 50px;
+      font-size: .75rem; font-weight: 700; margin-bottom: 1rem;
+    }
+    .app-inner h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 900; color: var(--navy); letter-spacing: -.6px; line-height: 1.2; margin-bottom: .9rem; }
+    .app-inner > div > p { color: var(--muted); line-height: 1.72; margin-bottom: 1.6rem; }
+    .app-feats { display: flex; flex-direction: column; gap: .65rem; margin-bottom: 1.8rem; }
+    .app-feat { display: flex; align-items: flex-start; gap: .7rem; font-size: .88rem; color: #2d3748; }
+    .check {
+      flex-shrink: 0; width: 19px; height: 19px;
+      background: var(--gold); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; margin-top: 1px;
+      font-size: .62rem; font-weight: 900; color: var(--navy);
+    }
+    /* App preview card */
+    .app-card {
+      background: linear-gradient(140deg, var(--navy) 0%, var(--navy-mid) 100%);
+      border-radius: 18px; padding: 2.5rem 2rem;
+      box-shadow: var(--shadow-lg); color: #fff; text-align: center;
+    }
+    .ac-title { font-size: 1.5rem; font-weight: 900; margin-bottom: .3rem; }
+    .ac-sub { font-size: .82rem; color: rgba(255,255,255,.5); margin-bottom: 1.6rem; }
+    .ac-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; margin-bottom: 1.6rem; }
+    .ac-stat { background: rgba(255,255,255,.07); border-radius: 10px; padding: .95rem; }
+    .ac-val { font-size: 1.5rem; font-weight: 900; color: var(--gold); display: block; line-height: 1; }
+    .ac-lbl { font-size: .72rem; color: rgba(255,255,255,.5); margin-top: .2rem; display: block; }
+    .btn-launch {
+      display: flex; align-items: center; justify-content: center; gap: .5rem;
+      background: var(--gold); color: var(--navy);
+      padding: .9rem 1.5rem; border-radius: 10px;
+      font-weight: 800; font-size: .93rem; text-decoration: none;
+      transition: background .2s;
+    }
+    .btn-launch:hover { background: var(--gold-dk); }
+
+    /* ── Discovery CTA banner ────────────────────────────── */
+    #cta {
+      background: var(--gold); padding: 3.5rem 6%; text-align: center;
+    }
+    #cta h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; color: var(--navy); letter-spacing: -.6px; margin-bottom: .8rem; }
+    #cta p { color: rgba(13,27,42,.7); font-size: 1rem; margin-bottom: 1.8rem; }
+    .btn-dark {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--navy); color: #fff;
+      padding: .9rem 2.2rem; border-radius: 10px;
+      font-weight: 800; font-size: .98rem; text-decoration: none;
+      transition: background .2s, transform .2s;
+      box-shadow: 0 4px 18px rgba(13,27,42,.25);
+    }
+    .btn-dark:hover { background: #162840; transform: translateY(-2px); }
+
+    /* ── Reviews ─────────────────────────────────────────── */
+    #reviews { background: #fff; text-align: center; }
+    .reviews-inner { max-width: 700px; margin: 0 auto; }
+    .google-btn {
+      display: inline-flex; align-items: center; gap: 1.2rem;
+      background: #fff; border: 2px solid var(--border);
+      border-radius: var(--radius); padding: 1.4rem 2.5rem;
+      box-shadow: var(--shadow); text-decoration: none;
+      transition: box-shadow .2s, border-color .2s, transform .2s;
+      margin-top: .5rem;
+    }
+    .google-btn:hover { border-color: var(--gold); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+    .g-logo { font-size: 2rem; font-weight: 900; background: linear-gradient(135deg,#4285F4,#EA4335,#FBBC05,#34A853); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .g-info strong { display: block; font-size: 1rem; color: var(--navy); font-weight: 700; }
+    .g-stars { color: var(--gold); font-size: 1.05rem; letter-spacing: 2px; margin: .1rem 0; }
+    .g-info span { font-size: .8rem; color: var(--muted); }
+
+    /* ── Student Portal ──────────────────────────────────── */
+    #portal { background: var(--navy); padding: 5.5rem 6%; }
+    .portal-hd { text-align: center; margin-bottom: 3rem; }
+    .portal-hd .s-title { color: #fff; }
+    .portal-hd .s-sub { color: rgba(255,255,255,.55); margin: .8rem auto 0; }
+    .portal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 960px; margin: 0 auto; }
+    .p-box {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius); padding: 2rem 1.8rem;
+    }
+    .p-box h3 { font-size: 1rem; font-weight: 800; color: #fff; margin-bottom: .35rem; }
+    .p-box p { font-size: .84rem; color: rgba(255,255,255,.48); margin-bottom: 1.4rem; line-height: 1.6; }
+
+    /* ── Footer ──────────────────────────────────────────── */
+    footer {
+      background: #060f18;
+      color: rgba(255,255,255,.4);
+      padding: 2.2rem 6%;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem; font-size: .83rem;
+    }
+    .f-logo { font-size: 1.15rem; font-weight: 900; color: #fff; text-decoration: none; }
+    .f-logo span { color: var(--gold); }
+    .f-links { display: flex; gap: 1.5rem; }
+    .f-links a { color: rgba(255,255,255,.4); text-decoration: none; transition: color .2s; }
+    .f-links a:hover { color: #fff; }
+
+    /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .app-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .portal-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 700px) {
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: rgba(13,27,42,.98); padding: 1.5rem 6%; gap: 1rem; }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+      footer { flex-direction: column; text-align: center; }
+      .f-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══════════════════════════════════════════════ -->
+<nav>
+  <a href="#" class="nav-logo">HSJ <span>Tuition</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="#framework">The Framework</a>
+    <a href="#delivery">How It Works</a>
+    <a href="#app">ChemMastery App</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#portal">Student Login</a>
+    <a href="https://chem.hsjtuition.co.uk/optin-page-1654-4309-9495-1705" class="nav-cta" target="_blank" rel="noopener">Book Discovery Call</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Open navigation">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ═══ HERO ═══════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">★ A-Level Chemistry &nbsp;·&nbsp; AQA &amp; OCR A</div>
+    <h1>From a B or C<br>to <span>A or A*.</span><br>Guaranteed.</h1>
+    <p>The ChemMastery Framework — a structured, five-pillar system built to take you from <em>understanding</em> Chemistry to <em>performing</em> under exam pressure. For students who are serious about the grade.</p>
+    <div class="hero-btns">
+      <a href="https://chem.hsjtuition.co.uk/optin-page-1654-4309-9495-1705" class="btn-primary" target="_blank" rel="noopener">Book Your Discovery Call →</a>
+      <a href="#portal" class="btn-ghost">Student Login</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STATS BAR ══════════════════════════════════════════ -->
+<div class="stats-bar">
+  <div><span class="stat-val">A / A*</span><span class="stat-lbl">Guaranteed from B or C</span></div>
+  <div><span class="stat-val">2+</span><span class="stat-lbl">Grade jump guaranteed</span></div>
+  <div><span class="stat-val">AQA + OCR</span><span class="stat-lbl">Both exam boards</span></div>
+  <div><span class="stat-val">1,100+</span><span class="stat-lbl">Flashcards in the app</span></div>
+  <div><span class="stat-val">12-wk</span><span class="stat-lbl">Personalised roadmap</span></div>
+</div>
+
+<!-- ═══ THE CHEMMASTERY FRAMEWORK ═════════════════════════ -->
+<section id="framework">
+  <div class="s-label">The ChemMastery Framework</div>
+  <h2 class="s-title">Five pillars. One proven system.</h2>
+  <p class="s-sub">Every student follows the same structured framework — each pillar closes a specific gap between where you are now and where you need to be on exam day.</p>
+
+  <div class="pillars">
+
+    <div class="pillar">
+      <div class="p-num">1</div>
+      <h3>Initial Diagnostic</h3>
+      <p>We start with a full diagnostic assessment covering content knowledge, exam technique and study habits. No assumptions, no guesswork — we identify exactly what is holding you back from Day 1.</p>
+      <div class="p-quote">"No guesswork. Just clarity and control from Day 1."</div>
+    </div>
+
+    <div class="pillar">
+      <div class="p-num">2</div>
+      <h3>12-Week Personalised Roadmap</h3>
+      <p>Based on your diagnostic, you receive a week-by-week plan tailored to your exam board, target grade and timeline. You will always know exactly what to work on next — and why it matters.</p>
+      <div class="p-quote">"Chemistry stops feeling overwhelming. Week by week, it becomes manageable."</div>
+    </div>
+
+    <div class="pillar">
+      <div class="p-num">3</div>
+      <h3>Topic Mastery</h3>
+      <p>Clear, precise explanations using models, mechanisms and worked examples — taught the way examiners expect you to think. We bridge the gap between understanding a topic and being able to use it under pressure.</p>
+      <div class="p-quote">"The subject finally makes sense — and stays that way on exam day."</div>
+    </div>
+
+    <div class="pillar">
+      <div class="p-num">4</div>
+      <h3>Weekly Past-Paper Training</h3>
+      <p>Every session includes exam-style questions, mark-scheme application and targeted feedback. You learn to express your knowledge precisely how examiners award marks — because understanding alone does not guarantee grades.</p>
+      <div class="p-quote">"No surprises on exam day. You are trained for performance, not just content."</div>
+    </div>
+
+    <div class="pillar">
+      <div class="p-num">5</div>
+      <h3>Problem-Solving &amp; High-Mark Strategies</h3>
+      <p>Focused training on the question types most students avoid: multi-step calculations, complex mechanisms and extended responses. We work on your weak spots every week until they become strengths.</p>
+      <div class="p-quote">"You stop dropping marks where it hurts most — and start gaining them."</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ HOW IT WORKS ════════════════════════════════════════ -->
+<section id="delivery">
+  <div class="s-label">How It Works</div>
+  <h2 class="s-title">What every week looks like</h2>
+  <p class="s-sub">A consistent weekly structure built for momentum — not just content delivery. Every element is purposeful.</p>
+
+  <div class="delivery">
+    <div class="d-item">
+      <div class="d-icon">⏱</div>
+      <div>
+        <h4>2 Hours Per Week</h4>
+        <p>Focused, structured sessions — every minute is purposeful. No filler, no passive note-taking. Pure progress.</p>
+      </div>
+    </div>
+    <div class="d-item">
+      <div class="d-icon">📝</div>
+      <div>
+        <h4>Custom Homework &amp; Feedback</h4>
+        <p>Targeted practice between sessions with detailed written feedback — progress does not stop when the session ends.</p>
+      </div>
+    </div>
+    <div class="d-item">
+      <div class="d-icon">🎥</div>
+      <div>
+        <h4>Session Recordings</h4>
+        <p>Every session is recorded so you can revisit explanations any time — ideal for revision before mocks and finals.</p>
+      </div>
+    </div>
+    <div class="d-item">
+      <div class="d-icon">📊</div>
+      <div>
+        <h4>Mock Assessments Every 4–6 Weeks</h4>
+        <p>Full mock assessments track your progress and recalibrate the roadmap. You always know exactly where you stand.</p>
+      </div>
+    </div>
+    <div class="d-item">
+      <div class="d-icon">💬</div>
+      <div>
+        <h4>Discord Support Community</h4>
+        <p>Ongoing messaging support between sessions for quick questions, accountability and peer study motivation.</p>
+      </div>
+    </div>
+    <div class="d-item">
+      <div class="d-icon">📱</div>
+      <div>
+        <h4>ChemMastery Revision App</h4>
+        <p>Exclusive access to our custom-built app — 1,100+ flashcards, synthesis routes and calculation practice for AQA &amp; OCR A.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GUARANTEE ══════════════════════════════════════════ -->
+<section id="guarantee">
+  <div class="g-inner">
+    <div class="s-label" style="color:var(--gold)">Our Guarantee</div>
+    <h2 class="s-title" style="color:#fff">Serious about the grade? <span>So are we.</span></h2>
+    <p>If you are working at a B or C, we guarantee you will reach an A or A*. If you are below that — a U, E or D — we guarantee a minimum two-grade jump. As long as you commit to the system, we commit to the result.</p>
+    <a href="https://chem.hsjtuition.co.uk/optin-page-1654-4309-9495-1705" class="btn-primary" target="_blank" rel="noopener">Book Your Discovery Call →</a>
+  </div>
+</section>
+
+<!-- ═══ CHEMMASTERY APP ════════════════════════════════════ -->
+<section id="app">
+  <div class="app-inner">
+    <div>
+      <div class="app-badge">✦ Exclusive to HSJ Tuition Students</div>
+      <h2>The ChemMastery<br>Revision App</h2>
+      <p>Built specifically for A-Level Chemistry students, ChemMastery gives you everything you need for active recall and exam preparation — available on any device, any time.</p>
+      <div class="app-feats">
+        <div class="app-feat"><div class="check">✓</div><span>1,100+ original flashcards across every AQA and OCR A topic</span></div>
+        <div class="app-feat"><div class="check">✓</div><span>Synthesis routes with full mechanism steps — FRS, nucleophilic substitution and more</span></div>
+        <div class="app-feat"><div class="check">✓</div><span>Calculation practice across 9 topics with full worked solutions</span></div>
+        <div class="app-feat"><div class="check">✓</div><span>Visual molecule diagrams rendered from SMILES notation</span></div>
+        <div class="app-feat"><div class="check">✓</div><span>Progress tracking across every topic so you can see exactly what to revisit</span></div>
+      </div>
+      <a href="https://harjsingh14-rgb.github.io/Chem-Mastery-/" class="btn-primary" target="_blank" rel="noopener">Open ChemMastery App →</a>
+    </div>
+
+    <div class="app-card">
+      <div class="ac-title">ChemMastery</div>
+      <div class="ac-sub">A-Level Chemistry Revision</div>
+      <div class="ac-grid">
+        <div class="ac-stat"><span class="ac-val">629</span><span class="ac-lbl">AQA flashcards</span></div>
+        <div class="ac-stat"><span class="ac-val">470+</span><span class="ac-lbl">OCR A flashcards</span></div>
+        <div class="ac-stat"><span class="ac-val">49</span><span class="ac-lbl">Calc questions</span></div>
+        <div class="ac-stat"><span class="ac-val">AQA<br>OCR A</span><span class="ac-lbl">Both boards</span></div>
+      </div>
+      <a href="https://harjsingh14-rgb.github.io/Chem-Mastery-/" class="btn-launch" target="_blank" rel="noopener">Launch App →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DISCOVERY CTA BANNER ══════════════════════════════ -->
+<section id="cta">
+  <h2>Ready to find out exactly what is holding you back?</h2>
+  <p>Book a free discovery call. We will talk through where you are, where you want to be, and whether the ChemMastery Framework is the right fit.</p>
+  <a href="https://chem.hsjtuition.co.uk/optin-page-1654-4309-9495-1705" class="btn-dark" target="_blank" rel="noopener">Book Your Free Discovery Call →</a>
+</section>
+
+<!-- ═══ GOOGLE REVIEWS ═════════════════════════════════════ -->
+<section id="reviews">
+  <div class="reviews-inner">
+    <div class="s-label">Student &amp; Parent Reviews</div>
+    <h2 class="s-title">Hear it from the students</h2>
+    <p class="s-sub" style="margin: 0 auto 2rem;">Real results from real students. See what parents and A-Level Chemistry students say about their experience with HSJ Tuition on Google.</p>
+    <!-- ⬇ Replace YOUR_GOOGLE_REVIEWS_LINK with your Google Business profile URL -->
+    <a href="YOUR_GOOGLE_REVIEWS_LINK" class="google-btn" target="_blank" rel="noopener">
+      <div class="g-logo">G</div>
+      <div class="g-info">
+        <strong>HSJ Tuition</strong>
+        <div class="g-stars">★★★★★</div>
+        <span>Read our Google Reviews →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ═══ STUDENT PORTAL ══════════════════════════════════════ -->
+<section id="portal">
+  <div class="portal-hd">
+    <div class="s-label">Student &amp; Parent Access</div>
+    <h2 class="s-title">Your Portal</h2>
+    <p class="s-sub">Existing students — log in to access your schedule, session notes and invoices. New to HSJ Tuition? Register your details below.</p>
+  </div>
+  <div class="portal-grid">
+
+    <div class="p-box">
+      <h3>Existing Students — Log In</h3>
+      <p>Access your upcoming sessions, resources and billing through the student portal.</p>
+      <!-- TutorBird LOGIN widget -->
+      <script src="https://app.tutorbird.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF85WlJKUiIsIldlYnNpdGVJRCI6Indic190bEpaIiwiV2Vic2l0ZUJsb2NrSUQiOiJ3YmJfRjFtSmQifQ=="></script>
+    </div>
+
+    <div class="p-box">
+      <h3>New Students — Register</h3>
+      <p>Register your details and we will be in touch to arrange your free discovery call and diagnostic session.</p>
+      <!-- TutorBird SIGN-UP widget — verify this code matches your Sign-Up widget in TutorBird → Settings → Widgets → Sign-Up -->
+      <script src="https://app.tutorbird.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF85WlJKUiIsIldlYnNpdGVJRCI6Indic190bEpaIiwiV2Vic2l0ZUJsb2NrSUQiOiJ3YmJfRjE2SnoifQ=="></script>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ FOOTER ══════════════════════════════════════════════ -->
+<footer>
+  <a href="#" class="f-logo">HSJ <span>Tuition</span></a>
+  <span>© 2025 HSJ Tuition. All rights reserved.</span>
+  <div class="f-links">
+    <a href="#framework">Framework</a>
+    <a href="#delivery">How It Works</a>
+    <a href="#app">App</a>
+    <a href="https://chem.hsjtuition.co.uk/optin-page-1654-4309-9495-1705" target="_blank" rel="noopener">Discovery Call</a>
+    <a href="#portal">Student Login</a>
+  </div>
+</footer>
+
+<!-- ═══ Scripts ═════════════════════════════════════════════ -->
+<script>
+  // Mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+</script>
+
+</body>
+</html>
