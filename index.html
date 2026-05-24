@@ -15,23 +15,23 @@
 
     /* ── Tokens ──────────────────────────────────────────── */
     :root {
-      --navy:      #0d1b2a;
-      --navy-mid:  #1e3a5f;
-      --gold:      #f5a623;
-      --gold-dk:   #d4891a;
+      --navy:      #264790;
+      --navy-mid:  #1e3a7a;
+      --gold:      #38b6ff;
+      --gold-dk:   #1a9fe0;
       --blue:      #44a6d9;
-      --light:     #f7f8fa;
-      --border:    #e2e8f0;
-      --muted:     #718096;
+      --light:     #f4f7fc;
+      --border:    #dce6f5;
+      --muted:     #6b7a99;
       --radius:    12px;
-      --shadow:    0 4px 24px rgba(0,0,0,.07);
-      --shadow-lg: 0 10px 48px rgba(0,0,0,.12);
+      --shadow:    0 4px 24px rgba(38,71,144,.08);
+      --shadow-lg: 0 10px 48px rgba(38,71,144,.15);
     }
 
     /* ── Nav ─────────────────────────────────────────────── */
     nav {
       position: sticky; top: 0; z-index: 200;
-      background: rgba(13,27,42,.96);
+      background: rgba(38,71,144,.97);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(255,255,255,.07);
       height: 68px;
@@ -54,7 +54,7 @@
 
     /* ── Hero ────────────────────────────────────────────── */
     .hero {
-      background: linear-gradient(140deg, #070f1a 0%, var(--navy-mid) 55%, #0a1628 100%);
+      background: linear-gradient(140deg, #1a3370 0%, var(--navy-mid) 50%, #264790 100%);
       min-height: 90vh;
       display: flex; align-items: center;
       padding: 6rem 6% 5rem;
@@ -64,14 +64,14 @@
       content: '';
       position: absolute; top: -120px; right: -80px;
       width: 560px; height: 560px;
-      background: radial-gradient(circle, rgba(245,166,35,.13) 0%, transparent 68%);
+      background: radial-gradient(circle, rgba(56,182,255,.15) 0%, transparent 68%);
       pointer-events: none;
     }
     .hero::after {
       content: '';
       position: absolute; bottom: -100px; left: -60px;
       width: 420px; height: 420px;
-      background: radial-gradient(circle, rgba(68,166,217,.09) 0%, transparent 68%);
+      background: radial-gradient(circle, rgba(68,166,217,.12) 0%, transparent 68%);
       pointer-events: none;
     }
     .hero-content { max-width: 740px; position: relative; z-index: 1; }
@@ -97,10 +97,10 @@
       background: var(--gold); color: var(--navy);
       padding: .9rem 2rem; border-radius: 10px;
       font-weight: 800; font-size: .98rem; text-decoration: none;
-      box-shadow: 0 4px 22px rgba(245,166,35,.35);
+      box-shadow: 0 4px 22px rgba(56,182,255,.35);
       transition: all .2s;
     }
-    .btn-primary:hover { background: var(--gold-dk); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(245,166,35,.4); }
+    .btn-primary:hover { background: var(--gold-dk); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(56,182,255,.4); }
     .btn-ghost {
       display: inline-flex; align-items: center; gap: .5rem;
       background: rgba(255,255,255,.07); color: #fff;
@@ -174,7 +174,7 @@
 
     /* ── Guarantee ───────────────────────────────────────── */
     #guarantee {
-      background: linear-gradient(140deg, var(--navy) 0%, var(--navy-mid) 100%);
+      background: linear-gradient(140deg, #1a3370 0%, var(--navy) 100%);
       text-align: center; padding: 5.5rem 6%;
     }
     .g-inner { max-width: 680px; margin: 0 auto; }
@@ -203,7 +203,7 @@
     }
     /* App preview card */
     .app-card {
-      background: linear-gradient(140deg, var(--navy) 0%, var(--navy-mid) 100%);
+      background: linear-gradient(140deg, #1a3370 0%, var(--navy) 100%);
       border-radius: 18px; padding: 2.5rem 2rem;
       box-shadow: var(--shadow-lg); color: #fff; text-align: center;
     }
@@ -226,17 +226,17 @@
     #cta {
       background: var(--gold); padding: 3.5rem 6%; text-align: center;
     }
-    #cta h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; color: var(--navy); letter-spacing: -.6px; margin-bottom: .8rem; }
-    #cta p { color: rgba(13,27,42,.7); font-size: 1rem; margin-bottom: 1.8rem; }
+    #cta h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; color: #fff; letter-spacing: -.6px; margin-bottom: .8rem; }
+    #cta p { color: rgba(255,255,255,.8); font-size: 1rem; margin-bottom: 1.8rem; }
     .btn-dark {
       display: inline-flex; align-items: center; gap: .5rem;
-      background: var(--navy); color: #fff;
+      background: #fff; color: var(--navy);
       padding: .9rem 2.2rem; border-radius: 10px;
       font-weight: 800; font-size: .98rem; text-decoration: none;
       transition: background .2s, transform .2s;
-      box-shadow: 0 4px 18px rgba(13,27,42,.25);
+      box-shadow: 0 4px 18px rgba(38,71,144,.2);
     }
-    .btn-dark:hover { background: #162840; transform: translateY(-2px); }
+    .btn-dark:hover { background: #f0f4ff; transform: translateY(-2px); }
 
     /* ── Reviews ─────────────────────────────────────────── */
     #reviews { background: #fff; text-align: center; }
@@ -256,7 +256,7 @@
     .g-info span { font-size: .8rem; color: var(--muted); }
 
     /* ── Student Portal ──────────────────────────────────── */
-    #portal { background: var(--navy); padding: 5.5rem 6%; }
+    #portal { background: #1a3370; padding: 5.5rem 6%; }
     .portal-hd { text-align: center; margin-bottom: 3rem; }
     .portal-hd .s-title { color: #fff; }
     .portal-hd .s-sub { color: rgba(255,255,255,.55); margin: .8rem auto 0; }
@@ -271,7 +271,7 @@
 
     /* ── Footer ──────────────────────────────────────────── */
     footer {
-      background: #060f18;
+      background: #111f4a;
       color: rgba(255,255,255,.4);
       padding: 2.2rem 6%;
       display: flex; justify-content: space-between; align-items: center;
@@ -489,8 +489,7 @@
     <div class="s-label">Student &amp; Parent Reviews</div>
     <h2 class="s-title">Hear it from the students</h2>
     <p class="s-sub" style="margin: 0 auto 2rem;">Real results from real students. See what parents and A-Level Chemistry students say about their experience with HSJ Tuition on Google.</p>
-    <!-- ⬇ Replace YOUR_GOOGLE_REVIEWS_LINK with your Google Business profile URL -->
-    <a href="YOUR_GOOGLE_REVIEWS_LINK" class="google-btn" target="_blank" rel="noopener">
+    <a href="https://www.google.com/search?q=HSJ+Tuition+reviews" class="google-btn" target="_blank" rel="noopener">
       <div class="g-logo">G</div>
       <div class="g-info">
         <strong>HSJ Tuition</strong>
