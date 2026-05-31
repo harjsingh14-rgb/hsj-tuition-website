@@ -254,12 +254,33 @@
     .portal-hd .s-sub { color: rgba(255,255,255,.55); margin: .8rem auto 0; }
     .portal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 960px; margin: 0 auto; }
     .p-box {
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.15);
       border-radius: var(--radius); padding: 2rem 1.8rem;
+      transition: background .2s;
     }
-    .p-box h3 { font-size: 1rem; font-weight: 800; color: #fff; margin-bottom: .35rem; }
-    .p-box p { font-size: .84rem; color: rgba(255,255,255,.48); margin-bottom: 1.4rem; line-height: 1.6; }
+    .p-box:hover { background: rgba(255,255,255,.11); }
+    .p-box-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; margin-bottom: 1rem;
+    }
+    .p-box-icon.login { background: rgba(56,182,255,.18); }
+    .p-box-icon.register { background: rgba(68,166,217,.18); }
+    .p-box h3 { font-size: 1.05rem; font-weight: 800; color: #fff; margin-bottom: .4rem; }
+    .p-box .p-box-desc { font-size: .84rem; color: rgba(255,255,255,.52); margin-bottom: 1.4rem; line-height: 1.6; }
+    .p-box-divider { border: none; border-top: 1px solid rgba(255,255,255,.1); margin-bottom: 1.4rem; }
+
+    /* Social links */
+    .social-links { display: flex; gap: .75rem; align-items: center; flex-wrap: wrap; }
+    .social-link {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 8px;
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.6); text-decoration: none; font-size: .95rem;
+      transition: background .2s, color .2s;
+    }
+    .social-link:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
 
     /* Footer */
     footer {
@@ -296,6 +317,25 @@
       .nav-toggle { display: block; }
       footer { flex-direction: column; text-align: center; }
       .f-links { justify-content: center; }
+      section { padding: 3.5rem 5%; }
+      .hero { padding: 4rem 5% 3.5rem; min-height: auto; }
+      .hero-btns { flex-direction: column; }
+      .btn-primary, .btn-ghost { width: 100%; justify-content: center; }
+      .stats-bar { padding: 1.4rem 5%; grid-template-columns: repeat(2, 1fr); }
+      .pillars { grid-template-columns: 1fr; }
+      .delivery { grid-template-columns: 1fr; }
+      .review-cards { grid-template-columns: 1fr; }
+      .portal-grid { grid-template-columns: 1fr; }
+      .p-box { padding: 1.5rem 1.2rem; }
+      /* Make TutorBird widgets scroll horizontally on small screens */
+      .p-box iframe, .p-box > div { max-width: 100%; overflow-x: auto; }
+      .footer-main { flex-direction: column; align-items: center; text-align: center; }
+      .social-links { justify-content: center; }
+      .f-links { justify-content: center; }
+    }
+    @media (max-width: 420px) {
+      .stats-bar { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .stat-val { font-size: 1.4rem; }
     }
   </style>
 </head>
@@ -548,14 +588,18 @@
   <div class="portal-grid">
 
     <div class="p-box">
-      <h3>Existing Students. Log In</h3>
-      <p>Access your upcoming sessions, resources and billing through the student portal.</p>
+      <div class="p-box-icon login">🔑</div>
+      <h3>Existing Students — Log In</h3>
+      <p class="p-box-desc">Access your upcoming sessions, session recordings, resources and billing through the student portal.</p>
+      <hr class="p-box-divider">
       <script src="https://app.tutorbird.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF85WlJKUiIsIldlYnNpdGVJRCI6Indic190bEpaIiwiV2Vic2l0ZUJsb2NrSUQiOiJ3YmJfRjFtSmQifQ=="></script>
     </div>
 
     <div class="p-box">
+      <div class="p-box-icon register">📋</div>
       <h3>New Students — Register</h3>
-      <p>Register your details and we will be in touch to arrange your free discovery call and diagnostic session.</p>
+      <p class="p-box-desc">Register your details and we will be in touch to arrange your free discovery call and diagnostic session.</p>
+      <hr class="p-box-divider">
       <script src="https://app.tutorbird.com/Widget/v4/Widget.ashx?settings=eyJTY2hvb2xJRCI6InNjaF85WlJKUiIsIldlYnNpdGVJRCI6Indic190bEpaIiwiV2Vic2l0ZUJsb2NrSUQiOiJ3YmJfRjE2SnoifQ=="></script>
     </div>
 
@@ -568,7 +612,6 @@
     <a href="#" class="f-logo">
       <img src="logo.png" alt="HSJ Tuition" />
     </a>
-    <span>© 2025 HSJ Tuition. All rights reserved.</span>
     <div class="f-links">
       <a href="#framework">Framework</a>
       <a href="#delivery">How It Works</a>
@@ -576,7 +619,19 @@
       <a href="https://chem.hsjtuition.co.uk/optin-page-1654-4309-9495-1705" target="_blank" rel="noopener">Discovery Call</a>
       <a href="#portal">Student Login</a>
     </div>
+    <div class="social-links">
+      <a href="https://www.instagram.com/hsjtuition" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@hsjtuition" class="social-link" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/hsjtuition" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+    </div>
   </div>
+  <div style="text-align:center; margin-bottom: 1rem; font-size:.75rem; color:rgba(255,255,255,.3)">© 2025 HSJ Tuition. All rights reserved.</div>
   <div class="footer-tc">
     *Guarantee applies to students who complete the full 12 week programme, attend all scheduled sessions and complete all set homework and assignments. The A/A<sup>*</sup> guarantee applies to students entering at a grade B or C. Results are based on full engagement with the programme. Individual results may vary. Full terms and conditions are available on request.
   </div>
