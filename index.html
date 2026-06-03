@@ -72,7 +72,19 @@
       background: radial-gradient(circle, rgba(68,166,217,.12) 0%, transparent 68%);
       pointer-events: none;
     }
-    .hero-content { max-width: 740px; position: relative; z-index: 1; }
+    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; width: 100%; position: relative; z-index: 1; }
+    .hero-content { position: relative; z-index: 1; }
+    .hero-video { position: relative; z-index: 1; }
+    .hero-video-wrap {
+      position: relative; width: 100%; padding-bottom: 56.25%;
+      border-radius: 16px; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,.45);
+      border: 2px solid rgba(255,255,255,.12);
+    }
+    .hero-video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      border: none;
+    }
     .hero-badge {
       display: inline-flex; align-items: center; gap: .5rem;
       background: rgba(245,166,35,.13); border: 1px solid rgba(245,166,35,.32);
@@ -319,6 +331,8 @@
       .f-links { justify-content: center; }
       section { padding: 3.5rem 5%; }
       .hero { padding: 4rem 5% 3.5rem; min-height: auto; }
+      .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-video { order: -1; }
       .hero-btns { flex-direction: column; }
       .btn-primary, .btn-ghost { width: 100%; justify-content: center; }
       .stats-bar { padding: 1.4rem 5%; grid-template-columns: repeat(2, 1fr); }
@@ -361,13 +375,20 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-content">
-    <div class="hero-badge">★ A-Level Chemistry &nbsp;·&nbsp; AQA &amp; OCR A</div>
-    <h1>From a B or C<br>to <span>A or A<sup style="font-size:.55em;vertical-align:super;line-height:0">*</sup>.</span><br>Guaranteed.*</h1>
-    <p>The ChemMastery Framework is a structured five pillar system built to take you from understanding Chemistry to performing under exam pressure. For students who are serious about the grade.</p>
-    <div class="hero-btns">
-      <a href="https://chem.hsjtuition.co.uk/booking-page" class="btn-primary" target="_blank" rel="noopener">Book Your Discovery Call →</a>
-      <a href="#portal" class="btn-ghost">Student Login</a>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">★ A-Level Chemistry &nbsp;·&nbsp; AQA &amp; OCR A</div>
+      <h1>From a B or C<br>to <span>A or A<sup style="font-size:.55em;vertical-align:super;line-height:0">*</sup>.</span><br>Guaranteed.*</h1>
+      <p>The ChemMastery Framework is a structured five pillar system built to take you from understanding Chemistry to performing under exam pressure. For students who are serious about the grade.</p>
+      <div class="hero-btns">
+        <a href="https://chem.hsjtuition.co.uk/booking-page" class="btn-primary" target="_blank" rel="noopener">Book Your Discovery Call →</a>
+        <a href="#portal" class="btn-ghost">Student Login</a>
+      </div>
+    </div>
+    <div class="hero-video">
+      <div class="hero-video-wrap">
+        <iframe src="https://www.youtube.com/embed/ZFuNX4sj5h8?rel=0&modestbranding=1" title="HSJ Tuition — A-Level Chemistry Results Guaranteed" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
     </div>
   </div>
 </section>
